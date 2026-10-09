@@ -1,0 +1,34 @@
+node_modules/
+vendor/
+dist/
+private/
+*.log
+
+dist-*/
+
+# Local test media, credentials and operating-system files
+test-results/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Local account state and media must not enter the public source snapshot
+accounts/
+*.enc
+*.sqlite
+*.sqlite3
+*.db
+*cookie*.txt
+history.json
+settings.json
+*.mp4
+*.mkv
+*.part
+
+# CNB-only maintenance utility
+scripts/read-signature.cjs

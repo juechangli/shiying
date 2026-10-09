@@ -1,0 +1,76 @@
+{
+  "name": "videodock",
+  "version": "1.1.1",
+  "description": "VideoDock 拾影 — 桌面与手机视频下载器",
+  "author": {
+    "name": "linjuechang",
+    "email": "ironmanl@qq.com"
+  },
+  "private": true,
+  "main": "src/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.cjs",
+    "vendors": "node scripts/vendors.cjs",
+    "build:mac": "electron-builder --mac dir --arm64",
+    "build:win": "electron-builder --win nsis --x64",
+    "mobile": "node src/mobile-server.cjs",
+    "prebuild:mac": "node scripts/check-release-tools.cjs mac-arm64",
+    "prebuild:win": "node scripts/check-release-tools.cjs win-x64"
+  },
+  "allowScripts": {
+    "electron": true
+  },
+  "dependencies": {
+    "qrcode": "1.5.4"
+  },
+  "devDependencies": {
+    "electron": "44.4.1",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.aky.videodock",
+    "productName": "VideoDock",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**",
+      "ui/**",
+      "package.json",
+      "LICENSE",
+      "NOTICE",
+      "THIRD_PARTY_NOTICES.md",
+      "PRIVACY.md",
+      "SECURITY.md"
+    ],
+    "asar": true,
+    "extraResources": [
+      {
+        "from": "vendor/${os}-${arch}",
+        "to": "tools",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.utilities",
+      "identity": null,
+      "hardenedRuntime": false,
+      "icon": "ui/icon.icns"
+    },
+    "win": {
+      "signAndEditExecutable": false,
+      "artifactName": "VideoDock-${version}-Windows-${arch}-Setup.${ext}",
+      "icon": "ui/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "license": "SEE LICENSE IN LICENSE"
+}
