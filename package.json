@@ -25,7 +25,7 @@
     "qrcode": "1.5.4"
   },
   "devDependencies": {
-    "electron": "44.4.1",
+    "electron": "44.4.5",
     "electron-builder": "26.15.3"
   },
   "build": {
@@ -72,5 +72,8 @@
       "createStartMenuShortcut": true
     }
   },
-  "license": "SEE LICENSE IN LICENSE"
+  "license": "SEE LICENSE IN LICENSE",
+  "overrides": {
+    "http-cache-semantics": "4.3.0"
+  }
 }

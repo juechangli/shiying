@@ -1,6 +1,14 @@
 # VideoDock 拾影
 
-> 当前公开版本为源码版本。旧版 Mac 安装包含不可再分发的 FFmpeg 构建，不应继续分发。本仓库不附带安装包、下载工具或个人账号数据。见 [第三方组件说明](THIRD_PARTY_NOTICES.md)。
+> 本版本提供应用下载，内置下载工具及重新编译的 LGPL FFmpeg。旧版 Mac 包中的 nonfree FFmpeg 已替换。第三方组件保留各自许可，见 [第三方说明](THIRD_PARTY_NOTICES.md)。
+
+## 直接下载
+
+- [Windows x64 安装器](https://github.com/juechangli/shiying/releases/download/v1.1.1/VideoDock-1.1.1-Windows-x64-Setup.exe)
+- [Mac Apple Silicon 应用](https://github.com/juechangli/shiying/releases/download/v1.1.1/VideoDock-1.1.1-macOS-AppleSilicon.zip)
+- [全部附件、校验和与第三方源码](https://github.com/juechangli/shiying/releases/tag/v1.1.1)
+
+Windows 下载后运行安装器；Mac 解压后将 VideoDock.app 拖入“应用程序”。未使用商业代码签名或 Apple 公证，系统可能提示发布者未验证。Mac 需要 Apple Silicon 和 macOS 13 或更新版本。Windows 为交叉构建，尚未做 Windows 真机验收。Android/iPhone 使用应用内手机 Web 配对功能，并非原生 APK/IPA。
 
 ## 提供方与使用限制
 
@@ -60,7 +68,7 @@ HTTPS 环境下可注册服务工作线程并安装 PWA；普通 HTTP 局域网�
 
 ## 开发和打包
 
-Node 24.21.0，Electron 44.4.1，electron-builder 26.15.3。
+Node 24.21.0，Electron 44.4.5，electron-builder 26.15.3。
 
 ```sh
 npm ci

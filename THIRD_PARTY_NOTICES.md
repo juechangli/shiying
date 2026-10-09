@@ -16,3 +16,9 @@
 构建前检查会拒绝已知 nonfree 构建和缺失的说明文件，但不会自动证明全部组件合规。Windows 构建必须单独核对。
 
 官方依据：[FFmpeg License](https://ffmpeg.org/doxygen/trunk/md_LICENSE.html)、[FFmpeg Legal](https://ffmpeg.org/legal.html)。
+
+## v1.1.1 应用包
+
+本次包使用自行编译的 FFmpeg 9.0.2，关闭 GPL/nonfree 和自动第三方依赖检测，实际许可为 LGPL-2.1-or-later。Mac 使用系统 SecureTransport，Windows 使用系统 Schannel。FFmpeg 和 yt-dlp 是独立可执行组件；拾影非商业条款不限制这些第三方组件本身的使用、修改或再分发权利，也不禁止为调试第三方修改而进行法律或其许可证允许的逆向工程。
+
+Release 提供未修改的 FFmpeg 官方源码、签名、构建脚本及 yt-dlp 对应源码。应用 resources/tools 内附许可证及来源说明。FFmpeg 可替换；Mac 修改应用内容可能使本机签名失效。
